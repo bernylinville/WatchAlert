@@ -57,11 +57,10 @@ func (p Pinger) PilotWithMetrics(option EndpointOption, ruleInfo ProbeRuleInfo) 
 	// 创建基础标签
 	baseLabels := map[string]any{
 		"tenant_id":  ruleInfo.TenantID,
-		"rule_id":    ruleInfo.RuleID,
+		"probe_id":   ruleInfo.RuleID,
 		"probe_name": ruleInfo.RuleName,
 		"probe_type": ruleInfo.RuleType,
 		"endpoint":   ruleInfo.Endpoint,
-		"ip_addr":    detail.IPAddr,
 	}
 
 	// 创建ICMP指标
